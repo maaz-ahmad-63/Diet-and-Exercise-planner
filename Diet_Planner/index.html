@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet & Exercise Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🥗 Diet & Exercise Planner</h1>
+            <p class="subtitle">Plan your meals & workouts for every day of the week</p>
+        </header>
+
+        <!-- Day Selector -->
+        <section class="day-selector">
+            <h2>Select a Day</h2>
+            <div class="days-grid">
+                <button class="day-btn active" data-day="monday">Mon</button>
+                <button class="day-btn" data-day="tuesday">Tue</button>
+                <button class="day-btn" data-day="wednesday">Wed</button>
+                <button class="day-btn" data-day="thursday">Thu</button>
+                <button class="day-btn" data-day="friday">Fri</button>
+                <button class="day-btn" data-day="saturday">Sat</button>
+                <button class="day-btn" data-day="sunday">Sun</button>
+            </div>
+        </section>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="diet">🍽️ Diet Plan</button>
+            <button class="tab-btn" data-tab="exercise">🏋️ Exercise Plan</button>
+            <button class="tab-btn" data-tab="calculator">🔢 Calorie Calculator</button>
+        </div>
+
+        <!-- Diet Plan Tab -->
+        <section id="diet" class="tab-content active">
+            <div class="meal-cards" id="mealCards">
+                <!-- Filled by JS -->
+            </div>
+            <div class="daily-summary" id="dailySummary">
+                <!-- Filled by JS -->
+            </div>
+        </section>
+
+        <!-- Exercise Plan Tab -->
+        <section id="exercise" class="tab-content">
+            <div class="exercise-cards" id="exerciseCards">
+                <!-- Filled by JS -->
+            </div>
+            <div class="exercise-summary" id="exerciseSummary">
+                <!-- Filled by JS -->
+            </div>
+        </section>
+
+        <!-- Calorie Calculator Tab -->
+        <section id="calculator" class="tab-content">
+            <div class="calculator-box">
+                <h2>🔢 Nutrition Calculator</h2>
+                <p class="calc-desc">Add food items to calculate total calories & protein</p>
+
+                <div class="food-input-row">
+                    <input type="text" id="foodName" placeholder="Food name (e.g., Chicken Breast)">
+                    <input type="number" id="foodCalories" placeholder="Calories" min="0">
+                    <input type="number" id="foodProtein" placeholder="Protein (g)" min="0">
+                    <input type="number" id="foodQuantity" placeholder="Qty" min="1" value="1">
+                    <button id="addFoodBtn">+ Add</button>
+                </div>
+
+                <!-- Quick-add common foods -->
+                <div class="quick-add">
+                    <h3>Quick Add Common Foods</h3>
+                    <div class="quick-add-grid" id="quickAddGrid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <div class="food-list-container">
+                    <table id="foodTable">
+                        <thead>
+                            <tr>
+                                <th>Food</th>
+                                <th>Qty</th>
+                                <th>Calories</th>
+                                <th>Protein (g)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="foodTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="calc-totals" id="calcTotals">
+                    <div class="total-card">
+                        <span class="total-label">Total Calories</span>
+                        <span class="total-value" id="totalCalories">0</span>
+                    </div>
+                    <div class="total-card">
+                        <span class="total-label">Total Protein</span>
+                        <span class="total-value" id="totalProtein">0g</span>
+                    </div>
+                </div>
+
+                <button id="clearAllBtn" class="clear-btn">🗑️ Clear All</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
